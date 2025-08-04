@@ -8,7 +8,6 @@ import { useEffect } from "react";
 
 
 const App = () => {
-  const isLoggedIn = localStorage.getItem("userLoggedIn");
   const navigate = useNavigate();
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("userLoggedIn");
@@ -27,10 +26,6 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route
-          path="/"
-          element={isLoggedIn ? <Dashboard /> : <navigate to="/login" />}
-        />
       </Routes>
     </>
   );
