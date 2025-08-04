@@ -1,6 +1,5 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Register from "./pages/Register";
-import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import { useEffect } from "react";
@@ -34,7 +33,6 @@ const App = () => {
           path="/"
           element={isLoggedIn ? <Dashboard /> : <navigate to="/login" />}
         />
-        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
