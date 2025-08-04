@@ -3,7 +3,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import { useEffect } from "react";
-import Home from "./pages/Home";
+
 
 
 
@@ -24,8 +24,6 @@ const App = () => {
       <Routes>
         
         {/* -----------------------------------  */}
-
-        <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
