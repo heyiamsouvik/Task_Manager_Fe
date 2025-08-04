@@ -11,6 +11,7 @@ const Register = () => {
 
   const register = async (e) => {
     e.preventDefault();
+     console.log(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/register`)
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/register`,
@@ -24,6 +25,7 @@ const Register = () => {
       
       navigate("/login");
     } catch (error) {
+      console.log(error)
       toast.error(error.response.data.message);
     }
   };

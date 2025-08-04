@@ -7,6 +7,7 @@ import InProgrerss from "../components/Dashboard/InProgrerss";
 import Complete from "../components/Dashboard/Complete";
 import axios from "axios";
 import EditTask from "../components/Dashboard/EditTask";
+import { toast } from "react-toastify";
 
 const Dashboard = () => {
   const [addTaskDiv, setAddTaskDiv] = useState("hidden");
@@ -14,6 +15,7 @@ const Dashboard = () => {
   const [editTaskDiv, setEditTaskDiv] = useState("hidden");
   const [editTaskId, setEditTaskId] = useState();
   const featchNotes = async () => {
+    console.log(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/allnotes`)
     try {
       const res = await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/allnotes`, {
         withCredentials: true,
@@ -21,6 +23,7 @@ const Dashboard = () => {
       setTasks(res.data.tasks);
     } catch (error) {
       console.log(error);
+      toast.error("Failed to featch notes")
     }
   };
 

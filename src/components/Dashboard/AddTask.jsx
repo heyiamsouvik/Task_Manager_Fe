@@ -10,6 +10,7 @@ const AddTask = ({ setAddTaskDiv }) => {
 
   const addtask = async (e) => {
     e.preventDefault();
+    console.log(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/addtask`)
     try {
       const res = await axios.post(
         `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/addtask`,
@@ -28,6 +29,7 @@ const AddTask = ({ setAddTaskDiv }) => {
       setPriority("low");
       setStatus("yetToStart");
     } catch (error) {
+      console.log(error)
       toast.error(error.response.data.message);
 
     }

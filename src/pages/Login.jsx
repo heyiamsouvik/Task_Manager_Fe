@@ -9,8 +9,10 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const login = async (e) => {
     e.preventDefault();
+    console.log(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/login`)
     try {
       const response = await axios.post(
+        
         
          `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/login`,
         {

@@ -11,6 +11,7 @@ const EditTask = ({ setEditTaskDiv, editTaskId, refreshTasks }) => {
 
   useEffect(() => {
     const featch = async () => {
+      console.log( `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/gettask/${editTaskId}`)
       try {
         const res = await axios.get(
           `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/gettask/${editTaskId}`,
@@ -24,7 +25,7 @@ const EditTask = ({ setEditTaskDiv, editTaskId, refreshTasks }) => {
         setPriority(task.priority);
         setStatus(task.status);
       } catch (error) {
-        alert(error.response.data.error);
+        console.log(error.response.data.error);
       }
     };
     if (editTaskId) featch();
@@ -32,7 +33,7 @@ const EditTask = ({ setEditTaskDiv, editTaskId, refreshTasks }) => {
 
   const editTask = async (e) => {
     e.preventDefault();
-
+    console.log(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/editask/${editTaskId}`);
     try {
       const res = await axios.put(
         `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/editask/${editTaskId}`,
@@ -46,12 +47,14 @@ const EditTask = ({ setEditTaskDiv, editTaskId, refreshTasks }) => {
       refreshTasks();
       window.sessionStorage.removeItem("editTaskId");
     } catch (error) {
+      console.log(error)
       toast.error(error.response.data.message);
     }
   };
 
   const deleteTask = async (e) => {
     e.preventDefault();
+    console.log(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/deletetask/${editTaskId}`)
     try {
       const res = await axios.delete(
         `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/deletetask/${editTaskId}`,
