@@ -38,13 +38,15 @@ const Header = ({ setAddTaskDiv }) => {
       </div>
       <div className="flex gap-8">
         <button
-          className="font-semibold hover:text-blue-800 transition-all duration-300 "
+          className="font-semibold hover:text-blue-800 
+          transition-transform duration-300 ease-in-out transform hover:scale-105"
           onClick={() => setAddTaskDiv("block")}
         >
           Add Task
         </button>
         <button
-          className="text-2xl hover:text-red-600 transition-all duration-300"
+          className="text-2xl hover:text-red-600 
+          transition-transform duration-300 ease-in-out transform hover:scale-105"
           onClick={logout}
         >
           <FiLogOut />

@@ -41,16 +41,20 @@ const Dashboard = () => {
         <Header setAddTaskDiv={setAddTaskDiv} />
       </div>
 
-      <div className="px-12 py-4 flex gap-12 bg-zinc-100 min-h-[90vh] max-h-none">
-        <div className="w-1/3">
+     
+      <div className="px-4 py-4 grid grid-cols-1 md:grid-cols-3 gap-6 bg-zinc-100 min-h-[90vh]">
+       
+        <div className="">
           <Title title={"Yet To Start"} />
           <div className="pt-2">{<YetToStart task={tasks?.yetToStart} />}</div>
         </div>
-        <div className="w-1/3">
+        
+        <div className="">
           <Title title={"In Progress"} />
           <div className="pt-2">{<InProgrerss task={tasks?.inProgress} />}</div>
         </div>
-        <div className="w-1/3">
+        
+        <div className="">
           <Title title={"Completed"} />
           <div className="pt-2">{<Complete task={tasks?.completed} />}</div>
         </div>

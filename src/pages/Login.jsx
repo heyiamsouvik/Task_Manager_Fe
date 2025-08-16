@@ -35,20 +35,21 @@ const Login = () => {
   };
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center">
-      <div className="w-[60vw] md:w-[50vw] lg:[30vw]">
+    <div className="flex h-screen flex-col items-center justify-center px-4">
+      <div className="w-full max-w-md text-center mb-6">
         <h1 className="text-3xl font-bold text-center text-blue-800">
           Task Buddy
         </h1>
-        <h3 className="text-center font-semibold text-zinc-900">
+        <h3 className="text-lg font-semibold text-zinc-900 mt-2">
           Login with Taskify
         </h3>
       </div>
-      <div className="w-[50vw] md:w-[40vw] lg:[30vw] mt-4">
+      
+      <div className="w-full max-w-md">
         <form
           action=""
           onSubmit={login}
-          className="flex items-center flex-col gap-4"
+          className="flex flex-col gap-4 bg-white p-6 rounded shadow-md"
         >
           <input
             type="email"
@@ -70,13 +71,14 @@ const Login = () => {
           />
           <button
             type="submit"
-            className="bg-blue-800 text-white font-semibold py-2 rounded w-[50%] hover:bg-blue-700 transition-all duration-300"
+            className="bg-blue-800 text-white font-semibold py-2 rounded-2xl w-full 
+            hover:bg-blue-700 transition-transform duration-300 transform hover:scale-105"
           >
             Login
           </button>
           <p className="text-center font-semibold text-gray-900">
             Don't have an account?{"  "}
-            <Link to="/register">Register</Link>
+            <Link to="/register" className="text-blue-800 hover:underline">Register</Link>
           </p>
         </form>
       </div>
